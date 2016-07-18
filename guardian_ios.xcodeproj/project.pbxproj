@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28271491B8EF665DF8627A1F /* Pods_guardian_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2B3EB262DC95B9B25324B5 /* Pods_guardian_ios.framework */; };
 		F5D65F4D1D3D0888000AD57A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D65F4C1D3D0888000AD57A /* AppDelegate.swift */; };
 		F5D65F4F1D3D0888000AD57A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D65F4E1D3D0888000AD57A /* ViewController.swift */; };
 		F5D65F521D3D0888000AD57A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D65F501D3D0888000AD57A /* Main.storyboard */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D13E69B0AE7BC2D3F0D61B8 /* Pods-guardian_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guardian_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-guardian_ios/Pods-guardian_ios.release.xcconfig"; sourceTree = "<group>"; };
+		CC2B3EB262DC95B9B25324B5 /* Pods_guardian_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guardian_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5B464DD91C345D157CAC8B /* Pods-guardian_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guardian_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guardian_ios/Pods-guardian_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		F5D65F491D3D0888000AD57A /* guardian_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guardian_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D65F4C1D3D0888000AD57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D65F4E1D3D0888000AD57A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28271491B8EF665DF8627A1F /* Pods_guardian_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A804F6AF571B8952638FF6A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B3EB262DC95B9B25324B5 /* Pods_guardian_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F5D65F401D3D0888000AD57A = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,8 @@
 				F5D65F601D3D0888000AD57A /* guardian_iosTests */,
 				F5D65F6B1D3D0888000AD57A /* guardian_iosUITests */,
 				F5D65F4A1D3D0888000AD57A /* Products */,
+				FEA957B9237B40933739639B /* Pods */,
+				A804F6AF571B8952638FF6A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +140,15 @@
 			path = guardian_iosUITests;
 			sourceTree = "<group>";
 		};
+		FEA957B9237B40933739639B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE5B464DD91C345D157CAC8B /* Pods-guardian_ios.debug.xcconfig */,
+				0D13E69B0AE7BC2D3F0D61B8 /* Pods-guardian_ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5D65F711D3D0888000AD57A /* Build configuration list for PBXNativeTarget "guardian_ios" */;
 			buildPhases = (
+				300540B42382F3D407CE8C3F /* [CP] Check Pods Manifest.lock */,
 				F5D65F451D3D0888000AD57A /* Sources */,
 				F5D65F461D3D0888000AD57A /* Frameworks */,
 				F5D65F471D3D0888000AD57A /* Resources */,
+				AC341AFB82F346FC49F63DC4 /* [CP] Embed Pods Frameworks */,
+				32C1DAF04FA556D3BFA14722 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		300540B42382F3D407CE8C3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		32C1DAF04FA556D3BFA14722 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guardian_ios/Pods-guardian_ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC341AFB82F346FC49F63DC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guardian_ios/Pods-guardian_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F5D65F451D3D0888000AD57A /* Sources */ = {
@@ -397,9 +472,11 @@
 		};
 		F5D65F721D3D0888000AD57A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE5B464DD91C345D157CAC8B /* Pods-guardian_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = guardian_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taejunworld.guardian-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,9 +485,11 @@
 		};
 		F5D65F731D3D0888000AD57A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D13E69B0AE7BC2D3F0D61B8 /* Pods-guardian_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = guardian_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taejunworld.guardian-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,6 +561,7 @@
 				F5D65F731D3D0888000AD57A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5D65F741D3D0888000AD57A /* Build configuration list for PBXNativeTarget "guardian_iosTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +570,7 @@
 				F5D65F761D3D0888000AD57A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5D65F771D3D0888000AD57A /* Build configuration list for PBXNativeTarget "guardian_iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +579,7 @@
 				F5D65F791D3D0888000AD57A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
